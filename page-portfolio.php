@@ -29,7 +29,13 @@
 			</ul>
 		</section>
 
+		<section class="portfolio">
+	<div class="container">
 		<?php include(TEMPLATEPATH . "/inc/clientes-portfolio.php"); ?>
+	</div>
+</section>
+
+		
 
 	<?php endwhile; else: endif; ?>
 <?php get_footer(); ?>
