@@ -2,7 +2,7 @@
 
 <ul class="portfolio_lista rslides_portfolio">
 
-<?php if(have_rows('item_portfolio')): while(have_rows('item_portfolio')) : the_row(); ?>
+<?php if(have_rows('portfolio_imagem1' , $portfolio)): while(have_rows('portfolio_imagem1' , $portfolio)) : the_row(); ?>
 	<li>
 		<div class="grid-8"><img src="<?php the_sub_field('portfolio_imagem1' , $portfolio);?>" alt="<?php the_sub_field('portfolio_imagem_descricao1' , $portfolio);?>"></div>
 		<div class="grid-8"><img src="<?php the_sub_field('portfolio_imagem2' , $portfolio);?>" alt="<?php the_sub_field('portfolio_imagem_descricao2' , $portfolio);?>"></div>
