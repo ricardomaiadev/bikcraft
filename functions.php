@@ -1,5 +1,23 @@
 <?php 
 
+// Função para registrar os Sripts e o CSS
+
+function origamid_scripts() {
+	wp_register_script('simples-slide', get_template_directory_uri() . '/js/simple-slide.js', [], false, true);
+	wp_register_script('simples-anime', get_template_directory_uri() . '/js/simple-anime.js', [], false, true);
+	wp_register_script('simples-form', get_template_directory_uri() . '/js/simple-form.js', [], false, true);
+	wp_register_script('script', get_template_directory_uri() . '/js/script.js', ['simples-slide','simples-anime','simples-form'], false, true);
+
+	wp_enqueue_script('script');
+}
+add_action('wp_enqueue_scripts', 'origamid_scripts');
+
+function origamid_css() {
+	wp_register_style('origamid-style', get_template_directory_uri() . '/style.css', [], false, false);
+	wp_enqueue_style('origamid-style');
+}
+add_action('wp_enqueue_scripts', 'origamid_css');
+
 // Funções para Limpar o Header
 remove_action('wp_head', 'rsd_link');
 remove_action('wp_head', 'wlwmanifest_link');
@@ -14,6 +32,13 @@ remove_action('admin_print_styles', 'print_emoji_styles');
 
 // Habilitar Menus
 add_theme_support('menus');
+
+// Registrar Menu
+
+function register_my_menu() {
+	register_nav_menu('menu-principal',_('Menu Principal'));
+}
+add_action ('init', 'register_my_menu');
 
 //Custom Images Sizes
 
