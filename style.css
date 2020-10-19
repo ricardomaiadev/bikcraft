@@ -156,7 +156,7 @@ img {
   color: #fff;
 }
 
-.header_menu ul li a.menu_ativo {
+.header_menu ul li.current_page_item a {
   color: #fff;
 }
 
@@ -247,6 +247,10 @@ img {
   margin: 0 auto;
 }
 
+.produtos_lista a {
+  color: #000
+}
+
 .produtos_lista li h3 {
   font-weight: bold;
   font-size: 18px;
@@ -319,7 +323,7 @@ img {
   width: 634px;
   height: 83px;
   display: block;
-  background: url("../img/linhas.png") no-repeat center;
+  /* background: url("../img/linhas.png") no-repeat center; */
   position: absolute;
   top: 209px;
   right: 162px;
@@ -564,11 +568,11 @@ img {
   }
   
   .header_menu ul li a:hover {
-    border-color: #fff;
+   color: #fff;
   }
   
-  .header_menu ul li a.menu_ativo {
-    border-color: #fff;
+  .current_page_item a {
+   color: #fff;
   }
   
   /*Introducao*/
