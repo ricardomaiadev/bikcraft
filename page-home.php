@@ -74,6 +74,7 @@
 					<?php include(TEMPLATEPATH . "/inc/clientes-portfolio.php"); ?>
 			</div>
 		</section>
+
 		<?php include(TEMPLATEPATH . "/inc/qualidade.php"); ?>
 	<?php endwhile; else: endif; ?>
 <?php get_footer(); ?>
