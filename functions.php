@@ -3,12 +3,16 @@
 // Função para registrar os Sripts e o CSS
 
 function origamid_scripts() {
-	wp_register_script('simples-slide', get_template_directory_uri() . '/js/simple-slide.js', [], false, true);
-	wp_register_script('simples-anime', get_template_directory_uri() . '/js/simple-anime.js', [], false, true);
-	wp_register_script('simples-form', get_template_directory_uri() . '/js/simple-form.js', [], false, true);
-	wp_register_script('script', get_template_directory_uri() . '/js/script.js', ['simples-slide','simples-anime','simples-form'], false, true);
+	
+	wp_deregister_script('jquery');
 
-	wp_enqueue_script('script');
+	wp_register_script('jquery', get_template_directory_uri() . '/js/libs/jquery-1.11.2.min.js', [], '1.11.2', true);
+	wp_register_script('plugins-script', get_template_directory_uri() . '/js/plugins.js', ['jquery'], false, true);
+	wp_register_script('main-script', get_template_directory_uri() . '/js/main.js', [ 'jquery', 'plugins-script' ], false, true);
+	wp_register_script('modernizr', get_template_directory_uri() . '/js/libs/modernizr.custom.45655.js', [], '45655', true);
+
+	wp_enqueue_script( 'modernizr' );
+	wp_enqueue_script( 'main-script' );
 }
 add_action('wp_enqueue_scripts', 'origamid_scripts');
 
